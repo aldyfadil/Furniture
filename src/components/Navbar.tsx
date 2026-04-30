@@ -12,9 +12,13 @@ export default function Navbar() {
       <div className="flex items-center gap-12">
         <Menu className="w-6 h-6 text-white cursor-pointer hover:text-gold transition-colors" />
         <div className="hidden md:flex gap-8">
-          {['Collections', 'Archive', 'Studio'].map((item) => (
-            <a key={item} href="#" className="text-[10px] uppercase tracking-[0.3em] text-white hover:text-gold transition-colors font-medium">
-              {item}
+          {[
+            { name: 'Collections', href: '#collections' },
+            { name: 'Experience', href: '#experience' },
+            { name: 'Studio', href: '#studio' }
+          ].map((item) => (
+            <a key={item.name} href={item.href} className="text-[10px] uppercase tracking-[0.3em] text-white hover:text-gold transition-colors font-medium">
+              {item.name}
             </a>
           ))}
         </div>

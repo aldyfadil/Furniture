@@ -41,7 +41,7 @@ export default function Featured() {
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-60%']);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-stone-950">
+    <section id="collections" ref={targetRef} className="relative h-[300vh] bg-stone-950">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="absolute top-20 left-20 z-20">
           <h2 className="font-serif text-8xl font-black uppercase text-stone-800 leading-none opacity-20 select-none">Featured</h2>

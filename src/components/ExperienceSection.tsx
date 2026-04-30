@@ -15,7 +15,7 @@ export default function ExperienceSection() {
   );
 
   return (
-    <section ref={ref} className="relative h-[150vh] bg-black">
+    <section id="experience" ref={ref} className="relative h-[150vh] bg-black">
       <div className="sticky top-0 h-screen overflow-hidden">
         <motion.div style={{ clipPath }} className="absolute inset-0 z-0">
           <img 
@@ -32,7 +32,7 @@ export default function ExperienceSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="font-serif text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-tight max-w-4xl">
+            <h2 className="font-serif text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-tight max-w-4xl">
               Immersion in <br />
               <span className="text-stroke">Digital Geometry.</span>
             </h2>

@@ -13,7 +13,7 @@ export default function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+    <section id="hero" ref={containerRef} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
       {/* Cinematic Background */}
       <motion.div 
         style={{ y, scale, opacity }}
@@ -38,7 +38,7 @@ export default function Hero() {
           <span className="inline-block font-sans text-sm tracking-[0.4em] uppercase text-stone-400 mb-6 font-medium">
             Premiere Edition / 2026
           </span>
-          <h1 className="font-serif text-[clamp(3rem,12vw,10rem)] leading-[0.85] font-black uppercase tracking-tighter mb-8 italic">
+          <h1 className="font-serif text-[clamp(2.5rem,8vw,6.5rem)] leading-[0.95] font-black uppercase tracking-tighter mb-8 italic">
             Redefine <br />
             <span className="text-stroke">Living.</span> <br />
             Experience <br />

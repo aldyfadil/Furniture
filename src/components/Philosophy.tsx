@@ -12,7 +12,7 @@ export default function Philosophy() {
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen py-40 bg-stone-950 overflow-hidden">
+    <section id="studio" ref={containerRef} className="relative min-h-screen py-40 bg-stone-950 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           <div className="lg:col-span-5 relative">
@@ -43,7 +43,7 @@ export default function Philosophy() {
 
           <div className="lg:col-span-6">
             <span className="font-sans text-xs tracking-[0.5em] uppercase text-gold mb-8 block font-bold">The Core Ideology</span>
-            <h2 className="font-serif text-6xl md:text-8xl font-black uppercase leading-[0.9] mb-12 tracking-tighter italic">
+            <h2 className="font-serif text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-12 tracking-tighter italic">
               Where <span className="text-stroke">Form</span> <br />
               Defies <span className="text-white">Function.</span>
             </h2>
