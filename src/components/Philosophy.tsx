@@ -1,77 +1,56 @@
-import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import { motion } from 'motion/react';
+import { Award, Shield, Truck } from 'lucide-react';
 
-export default function Philosophy() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start']
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-
+export default function AboutUs() {
   return (
-    <section id="studio" ref={containerRef} className="relative min-h-screen py-40 bg-stone-950 overflow-hidden">
+    <section id="about" className="py-24 bg-beige dark:bg-zinc-800">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-          <div className="lg:col-span-5 relative">
-            <motion.div style={{ scale }}>
-              <div className="relative aspect-[4/5] overflow-hidden border border-stone-800">
-                <img 
-                  src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Craftsmanship" 
-                  className="w-full h-full object-cover grayscale brightness-75"
-                />
-                <div className="absolute inset-0 bg-gold/10 mix-blend-overlay" />
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              style={{ y }}
-              className="absolute -bottom-10 -right-10 w-2/3 aspect-square glass p-1 hidden lg:block"
-            >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="relative">
+            <div className="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800" 
-                alt="Detail" 
+                src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&q=80&w=1000" 
+                alt="Craftsmanship" 
                 className="w-full h-full object-cover"
               />
-            </motion.div>
+            </div>
+            <div className="absolute -bottom-10 -right-10 w-2/3 aspect-square glass rounded-sm p-4 hidden md:block">
+              <img 
+                src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?auto=format&fit=crop&q=80&w=800" 
+                alt="Detail" 
+                className="w-full h-full object-cover rounded-sm"
+              />
+            </div>
           </div>
 
-          <div className="lg:col-span-1" />
-
-          <div className="lg:col-span-6">
-            <span className="font-sans text-xs tracking-[0.5em] uppercase text-gold mb-8 block font-bold">The Core Ideology</span>
-            <h2 className="font-serif text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-12 tracking-tighter italic">
-              Where <span className="text-stroke">Form</span> <br />
-              Defies <span className="text-white">Function.</span>
-            </h2>
-            <div className="flex flex-col gap-8 max-w-lg">
-              <p className="text-stone-400 font-sans text-lg leading-relaxed font-light">
-                We design for the spaces between light and shadow. Our pieces are more than furniture; they are sculptural interventions that redefine the relationship between architecture and comfort.
+          <div className="space-y-12">
+            <div>
+              <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Our Heritage</span>
+              <h2 className="font-serif text-5xl font-bold leading-tight text-charcoal">Redefining Modern Living Through Craftsmanship</h2>
+              <p className="text-stone-600 mt-8 text-lg font-light leading-relaxed">
+                Aetheria was born from a passion for architecture and a desire to bring soulful design into every home. We believe that furniture is more than just objects; they are the foundation of your daily experience.
               </p>
-              <div className="h-[1px] w-full bg-stone-800" />
-              <div className="flex gap-12">
-                <div>
-                    <h4 className="font-serif text-3xl mb-2 italic">01 /</h4>
-                    <p className="text-[10px] uppercase tracking-widest text-stone-500 font-bold">Futuristic Architecture</p>
-                </div>
-                <div>
-                    <h4 className="font-serif text-3xl mb-2 italic">02 /</h4>
-                    <p className="text-[10px] uppercase tracking-widest text-stone-500 font-bold">Digital Craftsmanship</p>
-                </div>
-              </div>
-              <motion.button 
-                whileHover={{ x: 10 }}
-                className="flex items-center gap-6 mt-8 group"
-              >
-                <div className="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:border-gold transition-colors">
-                    <div className="w-2 h-2 bg-gold rounded-full" />
-                </div>
-                <span className="text-xs uppercase tracking-[0.3em] font-bold">Read our Manifesto</span>
-              </motion.button>
             </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {[
+                { icon: <Award className="w-8 h-8 text-gold" />, title: 'Premium Quality', desc: 'Sourced from the finest sustainable materials.' },
+                { icon: <Shield className="w-8 h-8 text-gold" />, title: 'Timeless Design', desc: 'Aesthetic that transcends fleeting trends.' },
+              ].map((item, i) => (
+                <div key={i} className="space-y-4">
+                  <div className="w-16 h-16 bg-white dark:bg-zinc-700 rounded-full flex items-center justify-center shadow-md">
+                    {item.icon}
+                  </div>
+                  <h4 className="font-sans text-lg font-semibold">{item.title}</h4>
+                  <p className="text-sm text-stone-500 font-light">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <button className="group flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal hover:text-gold transition-colors">
+              Find out more
+              <div className="w-10 h-[1px] bg-charcoal group-hover:bg-gold transition-all group-hover:w-16" />
+            </button>
           </div>
         </div>
       </div>

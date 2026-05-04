@@ -23,7 +23,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 border border-gold rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+      className="fixed top-0 left-0 w-10 h-10 border border-gold/50 rounded-full pointer-events-none z-[9999] hidden md:block"
       style={{
         translateX: cursorXSpring,
         translateY: cursorYSpring,
@@ -35,7 +35,7 @@ export default function CustomCursor() {
         opacity: isVisible ? 1 : 0,
       }}
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-gold rounded-full" />
     </motion.div>
   );
 }
