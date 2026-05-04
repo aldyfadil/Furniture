@@ -13,7 +13,7 @@ const PRODUCTS = [
     id: '02',
     name: 'Kursi Kayu Nordic',
     category: 'Kursi',
-    image: 'https://images.unsplash.com/photo-1598191950976-5008771474af?auto=format&fit=crop&q=80&w=1000',
+    image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=1000',
     price: 'Rp 12.800.000',
   },
   {
