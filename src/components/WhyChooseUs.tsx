@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { ShieldCheck, Zap, Heart, Sparkles } from 'lucide-react';
 
 const FEATURES = [
-  { icon: <ShieldCheck className="w-6 h-6" />, title: 'High Quality', desc: 'Crafted with the finest, sustainably sourced materials.' },
-  { icon: <Sparkles className="w-6 h-6" />, title: 'Modern Design', desc: 'Aesthetics that define contemporary living spaces.' },
-  { icon: <Zap className="w-6 h-6" />, title: 'Fast Delivery', desc: 'Global shipping network with white-glove service.' },
-  { icon: <Heart className="w-6 h-6" />, title: 'Affordable Luxury', desc: 'Premium design accessible for the discerning home.' },
+  { icon: <ShieldCheck className="w-6 h-6" />, title: 'Kualitas Tinggi', desc: 'Dibuat dengan bahan terbaik yang bersumber secara berkelanjutan.' },
+  { icon: <Sparkles className="w-6 h-6" />, title: 'Desain Modern', desc: 'Estetika yang mendefinisikan ruang hunian kontemporer.' },
+  { icon: <Zap className="w-6 h-6" />, title: 'Pengiriman Cepat', desc: 'Jaringan pengiriman global dengan layanan sarung tangan putih.' },
+  { icon: <Heart className="w-6 h-6" />, title: 'Mewah Terjangkau', desc: 'Desain premium yang dapat diakses untuk hunian yang cerdas.' },
 ];
 
 export default function WhyChooseUs() {

@@ -29,9 +29,9 @@ export default function Navbar() {
         <Menu className="w-5 h-5 cursor-pointer hover:text-gold transition-colors" />
         <div className="hidden lg:flex gap-8">
           {[
-            { name: 'Collections', href: '#collections' },
-            { name: 'About', href: '#about' },
-            { name: 'Categories', href: '#categories' }
+            { name: 'Koleksi', href: '#collections' },
+            { name: 'Tentang Kami', href: '#about' },
+            { name: 'Kategori', href: '#categories' }
           ].map((item) => (
             <a key={item.name} href={item.href} className="text-[10px] uppercase tracking-[0.2em] font-medium hover:text-gold transition-colors">
               {item.name}

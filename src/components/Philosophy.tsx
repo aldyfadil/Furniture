@@ -25,17 +25,17 @@ export default function AboutUs() {
 
           <div className="space-y-12">
             <div>
-              <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Our Heritage</span>
-              <h2 className="font-serif text-5xl font-bold leading-tight text-charcoal">Redefining Modern Living Through Craftsmanship</h2>
+              <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Warisan Kami</span>
+              <h2 className="font-serif text-5xl font-bold leading-tight text-charcoal">Mendefinisikan Ulang Kehidupan Modern melalui Seni Kriya</h2>
               <p className="text-stone-600 mt-8 text-lg font-light leading-relaxed">
-                Aetheria was born from a passion for architecture and a desire to bring soulful design into every home. We believe that furniture is more than just objects; they are the foundation of your daily experience.
+                Aetheria lahir dari hasrat terhadap arsitektur dan keinginan untuk membawa desain yang berjiwa ke dalam setiap rumah. Kami percaya bahwa furnitur lebih dari sekadar objek; mereka adalah fondasi dari pengalaman harian Anda.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {[
-                { icon: <Award className="w-8 h-8 text-gold" />, title: 'Premium Quality', desc: 'Sourced from the finest sustainable materials.' },
-                { icon: <Shield className="w-8 h-8 text-gold" />, title: 'Timeless Design', desc: 'Aesthetic that transcends fleeting trends.' },
+                { icon: <Award className="w-8 h-8 text-gold" />, title: 'Kualitas Premium', desc: 'Bersumber dari bahan berkelanjutan terbaik.' },
+                { icon: <Shield className="w-8 h-8 text-gold" />, title: 'Desain Abadi', desc: 'Estetika yang melampaui tren yang berlalu.' },
               ].map((item, i) => (
                 <div key={i} className="space-y-4">
                   <div className="w-16 h-16 bg-white dark:bg-zinc-700 rounded-full flex items-center justify-center shadow-md">
@@ -48,7 +48,7 @@ export default function AboutUs() {
             </div>
 
             <button className="group flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal hover:text-gold transition-colors">
-              Find out more
+              Cari tahu lebih lanjut
               <div className="w-10 h-[1px] bg-charcoal group-hover:bg-gold transition-all group-hover:w-16" />
             </button>
           </div>

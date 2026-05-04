@@ -35,21 +35,21 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="inline-block font-sans text-xs tracking-[0.5em] uppercase text-gold mb-6 font-semibold">
-              Premium Interior Solutions
+              Solusi Interior Premium
             </span>
             <h1 className="font-serif text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.1] font-bold text-charcoal mb-8">
-              Elevate Your <br />
-              <span className="italic font-normal">Living Space</span>
+              Tingkatkan <br />
+              <span className="italic font-normal">Ruang Hunian Anda</span>
             </h1>
             <p className="text-stone-600 max-w-lg text-lg mb-12 font-light leading-relaxed">
-              Discover a fusion of timeless elegance and modern craftsmanship. Aetheria brings curated luxury to the heart of your home.
+              Temukan perpaduan keanggunan abadi dan keahlian modern. Aetheria menghadirkan kemewahan terkurasi ke pusat rumah Anda.
             </p>
             <div className="flex gap-6">
               <button className="px-8 py-4 bg-charcoal text-white text-[10px] uppercase tracking-widest font-bold hover:bg-gold transition-colors shadow-xl">
-                Explore Collection
+                Jelajahi Koleksi
               </button>
               <button className="px-8 py-4 border border-charcoal/20 text-[10px] uppercase tracking-widest font-bold hover:border-gold hover:text-gold transition-colors">
-                View Gallery
+                Lihat Galeri
               </button>
             </div>
           </motion.div>
@@ -62,7 +62,7 @@ export default function Hero() {
           className="absolute bottom-12 right-12 hidden md:flex flex-col items-end gap-4"
         >
           <div className="w-24 h-[1px] bg-gold" />
-          <span className="text-[9px] uppercase tracking-[0.4em] text-gold font-bold">Scroll to Begin</span>
+          <span className="text-[9px] uppercase tracking-[0.4em] text-gold font-bold">Gulir Untuk Memulai</span>
         </motion.div>
       </div>
     </section>

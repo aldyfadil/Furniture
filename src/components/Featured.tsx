@@ -4,31 +4,31 @@ import { ShoppingBag } from 'lucide-react';
 const PRODUCTS = [
   {
     id: '01',
-    name: 'Serene Cloud Sofa',
+    name: 'Sofa Awan Serene',
     category: 'Sofa',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000',
-    price: '$2,499',
+    price: 'Rp 38.500.000',
   },
   {
     id: '02',
-    name: 'Nordic Oak Lounge',
-    category: 'Chair',
+    name: 'Kursi Kayu Nordic',
+    category: 'Kursi',
     image: 'https://images.unsplash.com/photo-1598191950976-5008771474af?auto=format&fit=crop&q=80&w=1000',
-    price: '$850',
+    price: 'Rp 12.800.000',
   },
   {
     id: '03',
-    name: 'Minimalist Marble Table',
-    category: 'Table',
+    name: 'Meja Marmer Minimalis',
+    category: 'Meja',
     image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=1000',
-    price: '$1,200',
+    price: 'Rp 18.200.000',
   },
   {
     id: '04',
-    name: 'Aetheria Pendant Light',
-    category: 'Decoration',
+    name: 'Lampu Gantung Aetheria',
+    category: 'Dekorasi',
     image: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=1000',
-    price: '$450',
+    price: 'Rp 6.900.000',
   },
 ];
 
@@ -38,10 +38,10 @@ export default function Featured() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
-            <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Curated Selections</span>
-            <h2 className="font-serif text-5xl font-bold text-charcoal">Featured Pieces</h2>
+            <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Pilihan Terkurasi</span>
+            <h2 className="font-serif text-5xl font-bold text-charcoal">Koleksi Unggulan</h2>
           </div>
-          <p className="text-stone-500 font-light max-w-sm">Every piece is selected for its exceptional design and unrivaled craftsmanship.</p>
+          <p className="text-stone-500 font-light max-w-sm">Setiap unit dipilih karena desainnya yang luar biasa dan pengerjaan yang tak tertandingi.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

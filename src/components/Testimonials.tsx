@@ -4,20 +4,20 @@ import { Star } from 'lucide-react';
 const REVIEWS = [
   {
     author: 'Sarah Jenkins',
-    role: 'Interior Designer',
-    text: "Aetheria Furniture brings a level of sophistication I haven't seen elsewhere. The quality of their materials is truly premium.",
+    role: 'Desainer Interior',
+    text: "Aetheria Furniture menghadirkan tingkat kecanggihan yang belum pernah saya lihat di tempat lain. Kualitas bahan mereka benar-benar premium.",
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200'
   },
   {
     author: 'David Chen',
-    role: 'Architect',
-    text: "The minimalist approach combined with functional elegance makes every piece a conversation starter in my projects.",
+    role: 'Arsitek',
+    text: "Pendekatan minimalis yang dipadukan dengan keanggunan fungsional membuat setiap unit menjadi bahan pembicaraan di proyek saya.",
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200'
   },
   {
     author: 'Emma Wilson',
-    role: 'Homeowner',
-    text: "I transformed my living room with the Serene Cloud Sofa. It's not just furniture; it's a masterpiece of comfort.",
+    role: 'Pemilik Rumah',
+    text: "Saya mengubah ruang tamu saya dengan Sofa Awan Serene. Ini bukan sekadar furnitur; ini adalah mahakarya kenyamanan.",
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200'
   },
 ];
@@ -27,8 +27,8 @@ export default function Testimonials() {
     <section className="py-24 bg-white dark:bg-zinc-900 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Client Experience</span>
-          <h2 className="font-serif text-4xl font-bold">Trusted by Designers</h2>
+          <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Pengalaman Klien</span>
+          <h2 className="font-serif text-4xl font-bold">Dipercaya oleh Desainer</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

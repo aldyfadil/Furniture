@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 
 const CATEGORIES = [
-  { name: 'Sofa', image: 'https://images.unsplash.com/photo-1550254478-ead40cd82477?auto=format&fit=crop&q=80&w=800', count: '12 Pieces' },
-  { name: 'Chair', image: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800', count: '24 Pieces' },
-  { name: 'Table', image: 'https://images.unsplash.com/photo-1577145789311-6627e79744f9?auto=format&fit=crop&q=80&w=800', count: '08 Pieces' },
-  { name: 'Decoration', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800', count: '42 Pieces' },
+  { name: 'Sofa', image: 'https://images.unsplash.com/photo-1550254478-ead40cd82477?auto=format&fit=crop&q=80&w=800', count: '12 Produk' },
+  { name: 'Kursi', image: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800', count: '24 Produk' },
+  { name: 'Meja', image: 'https://images.unsplash.com/photo-1577145789311-6627e79744f9?auto=format&fit=crop&q=80&w=800', count: '08 Produk' },
+  { name: 'Dekorasi', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800', count: '42 Produk' },
 ];
 
 export default function Categories() {
@@ -12,8 +12,8 @@ export default function Categories() {
     <section id="categories" className="py-24 bg-beige dark:bg-zinc-800">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Space Solutions</span>
-          <h2 className="font-serif text-4xl font-bold">Explore Our World</h2>
+          <span className="text-gold font-sans text-xs tracking-[0.4em] uppercase font-bold block mb-4">Solusi Ruang</span>
+          <h2 className="font-serif text-4xl font-bold">Jelajahi Dunia Kami</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

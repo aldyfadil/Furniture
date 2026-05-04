@@ -44,18 +44,18 @@ export default function App() {
           {/* Final CTA Section */}
           <section className="relative py-32 flex flex-col items-center justify-center overflow-hidden bg-beige dark:bg-zinc-800">
              <div className="relative z-10 text-center px-6">
-                <span className="font-sans text-[10px] tracking-[0.5em] uppercase text-stone-500 mb-8 block font-bold italic">Curated Excellence</span>
+                <span className="font-sans text-[10px] tracking-[0.5em] uppercase text-stone-500 mb-8 block font-bold italic">Keunggulan Terkurasi</span>
                 <h2 className="font-serif text-[clamp(2.5rem,8vw,5rem)] leading-tight font-bold text-charcoal mb-12">
-                  Transform Your <br />
-                  <span className="text-gold italic font-normal">Home Today</span>
+                  Ubah Rumah <br />
+                  <span className="text-gold italic font-normal">Anda Hari Ini</span>
                 </h2>
                 <button className="px-12 py-5 bg-charcoal text-white text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-gold transition-all transform hover:scale-105 shadow-xl">
-                  Shop All Collections
+                  Belanja Semua Koleksi
                 </button>
              </div>
 
              <div className="absolute bottom-0 right-0 w-1/3 opacity-10">
-                <p className="text-[20vh] font-serif font-black leading-none uppercase select-none translate-y-1/2">Home</p>
+                <p className="text-[20vh] font-serif font-black leading-none uppercase select-none translate-y-1/2">Rumah</p>
              </div>
           </section>
         </main>

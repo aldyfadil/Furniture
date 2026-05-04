@@ -36,7 +36,7 @@ export default function LoadingScreen() {
             transition={{ delay: 0.5 }}
             className="text-[8px] uppercase tracking-[0.5em] mt-4 font-bold"
           >
-            Curating Elegance
+            Kurasi Keanggunan
           </motion.p>
         </motion.div>
       )}
