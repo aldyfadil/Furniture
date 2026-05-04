@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { X, ShoppingBag } from 'lucide-react';
+import { X, ShoppingBag, ArrowRight } from 'lucide-react';
 
 const CATEGORIES = [
   { name: 'Sofa', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800', count: '12 Produk' },
@@ -16,8 +16,24 @@ const SOFA_RECOMMENDATIONS = [
   { name: 'Minimalist Ivory Loveseat', image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=400', price: 'Rp 18.200.000' },
 ];
 
+const EXTENDED_SOFAS = [
+  ...SOFA_RECOMMENDATIONS,
+  { name: 'Royal Blue Velvet', image: 'https://images.unsplash.com/photo-1550254478-ead40cd82477?auto=format&fit=crop&q=80&w=400', price: 'Rp 28.900.000' },
+  { name: 'Charcoal Linen Suite', image: 'https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=400', price: 'Rp 21.500.000' },
+  { name: 'Terracotta Modular', image: 'https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=400', price: 'Rp 39.000.000' },
+  { name: 'Arctic White Minimalist', image: 'https://images.unsplash.com/photo-1549497538-301228c965dd?auto=format&fit=crop&q=80&w=400', price: 'Rp 26.000.000' },
+];
+
 export default function Categories() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedSofas = showAll ? EXTENDED_SOFAS : SOFA_RECOMMENDATIONS;
+
+  const closeModal = () => {
+    setSelectedCategory(null);
+    setShowAll(false);
+  };
 
   return (
     <section id="categories" className="py-24 bg-beige dark:bg-zinc-800">
@@ -62,7 +78,7 @@ export default function Categories() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedCategory(null)}
+              onClick={closeModal}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             />
             
@@ -70,27 +86,29 @@ export default function Categories() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-5xl bg-white dark:bg-zinc-900 rounded-sm overflow-hidden shadow-2xl p-8 md:p-12"
+              className="relative w-full max-w-5xl bg-white dark:bg-zinc-900 rounded-sm overflow-hidden shadow-2xl p-8 md:p-12 max-h-[90vh] overflow-y-auto"
             >
               <button 
-                onClick={() => setSelectedCategory(null)}
-                className="absolute top-6 right-6 p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
+                onClick={closeModal}
+                className="absolute top-6 right-6 p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors z-10 bg-white"
               >
                 <X className="w-6 h-6" />
               </button>
 
               <div className="mb-12">
                 <span className="text-gold font-sans text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Rekomendasi Eksklusif</span>
-                <h3 className="font-serif text-3xl font-bold">Pilihan Sofa Terbaik</h3>
+                <h3 className="font-serif text-3xl font-bold">
+                  {showAll ? 'Seluruh Koleksi Sofa Premium' : 'Pilihan Sofa Terbaik'}
+                </h3>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {SOFA_RECOMMENDATIONS.map((sofa, j) => (
+                {displayedSofas.map((sofa, j) => (
                   <motion.div 
                     key={sofa.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: j * 0.1 }}
+                    transition={{ delay: (j % 4) * 0.1 }}
                     className="group"
                   >
                     <div className="aspect-[4/5] overflow-hidden rounded-sm bg-beige mb-4 relative">
@@ -105,11 +123,17 @@ export default function Categories() {
                 ))}
               </div>
 
-              <div className="mt-12 pt-8 border-t border-stone-100 dark:border-stone-800 text-center">
-                <button className="text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal hover:text-gold transition-colors">
-                  Lihat Semua Koleksi Sofa
-                </button>
-              </div>
+              {!showAll && (
+                <div className="mt-12 pt-8 border-t border-stone-100 dark:border-stone-800 text-center">
+                  <button 
+                    onClick={() => setShowAll(true)}
+                    className="group flex items-center gap-4 mx-auto text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal hover:text-gold transition-colors"
+                  >
+                    Lihat Semua Koleksi Sofa
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  </button>
+                </div>
+              )}
             </motion.div>
           </div>
         )}
