@@ -1,10 +1,12 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, Search, ShoppingBag, Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const { setIsCartOpen, totalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -49,10 +51,17 @@ export default function Navbar() {
           {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         </button>
         <Search className="w-4 h-4 cursor-pointer hover:text-gold transition-colors" />
-        <div className="relative group cursor-pointer">
+        <button 
+          onClick={() => setIsCartOpen(true)}
+          className="relative group p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
+        >
           <ShoppingBag className="w-4 h-4 group-hover:text-gold transition-colors" />
-          <span className="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full" />
-        </div>
+          {totalItems > 0 && (
+            <span className="absolute top-1 right-1 w-4 h-4 bg-gold rounded-full text-[8px] flex items-center justify-center text-white font-bold">
+              {totalItems}
+            </span>
+          )}
+        </button>
       </div>
     </motion.nav>
   );

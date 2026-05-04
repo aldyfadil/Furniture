@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ShoppingBag } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const PRODUCTS = [
   {
@@ -33,6 +34,7 @@ const PRODUCTS = [
 ];
 
 export default function Featured() {
+  const { addToCart } = useCart();
   return (
     <section id="collections" className="py-24 bg-white dark:bg-zinc-900">
       <div className="container mx-auto px-6">
@@ -63,6 +65,7 @@ export default function Featured() {
                 <motion.button 
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => addToCart(product)}
                   className="absolute bottom-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
                 >
                   <ShoppingBag className="w-5 h-5 text-charcoal" />

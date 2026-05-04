@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { X, ShoppingBag, ArrowRight } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const CATEGORIES = [
   { name: 'Sofa', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800', count: '12 Produk' },
@@ -65,6 +66,7 @@ const RECOMMENDATIONS: Record<string, { base: any[], extended: any[] }> = {
 export default function Categories() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const { addToCart } = useCart();
 
   const currentRecs = selectedCategory ? RECOMMENDATIONS[selectedCategory] : null;
   const displayedItems = currentRecs ? (showAll ? [...currentRecs.base, ...currentRecs.extended] : currentRecs.base) : [];
@@ -152,7 +154,10 @@ export default function Categories() {
                   >
                     <div className="aspect-[4/5] overflow-hidden rounded-sm bg-beige mb-4 relative">
                       <img src={item.image} alt={item.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
-                      <button className="absolute bottom-4 right-4 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all">
+                      <button 
+                        onClick={() => addToCart(item)}
+                        className="absolute bottom-4 right-4 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
+                      >
                         <ShoppingBag className="w-4 h-4 text-charcoal" />
                       </button>
                     </div>

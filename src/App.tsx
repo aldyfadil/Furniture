@@ -14,14 +14,18 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
+import CartDrawer from './components/CartDrawer';
+import { CartProvider } from './context/CartContext';
 
 export default function App() {
   return (
-    <SmoothScroll>
-      <div className="relative bg-white dark:bg-zinc-900 min-h-screen text-charcoal">
-        <LoadingScreen />
-        <CustomCursor />
-        <Navbar />
+    <CartProvider>
+      <SmoothScroll>
+        <div className="relative bg-white dark:bg-zinc-900 min-h-screen text-charcoal">
+          <LoadingScreen />
+          <CartDrawer />
+          <CustomCursor />
+          <Navbar />
         
         <main>
           <Hero />
@@ -63,5 +67,6 @@ export default function App() {
         <Footer />
       </div>
     </SmoothScroll>
-  );
+  </CartProvider>
+);
 }
