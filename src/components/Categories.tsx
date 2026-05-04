@@ -9,26 +9,65 @@ const CATEGORIES = [
   { name: 'Dekorasi', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800', count: '42 Produk' },
 ];
 
-const SOFA_RECOMMENDATIONS = [
-  { name: 'Velvet Emerald Sofa', image: 'https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=400', price: 'Rp 24.500.000' },
-  { name: 'Leather Tan Classic', image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=400', price: 'Rp 32.000.000' },
-  { name: 'Modern Grey Sectional', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=400', price: 'Rp 45.000.000' },
-  { name: 'Minimalist Ivory Loveseat', image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=400', price: 'Rp 18.200.000' },
-];
-
-const EXTENDED_SOFAS = [
-  ...SOFA_RECOMMENDATIONS,
-  { name: 'Royal Blue Velvet', image: 'https://images.unsplash.com/photo-1550254478-ead40cd82477?auto=format&fit=crop&q=80&w=400', price: 'Rp 28.900.000' },
-  { name: 'Charcoal Linen Suite', image: 'https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=400', price: 'Rp 21.500.000' },
-  { name: 'Terracotta Modular', image: 'https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=400', price: 'Rp 39.000.000' },
-  { name: 'Arctic White Minimalist', image: 'https://images.unsplash.com/photo-1549497538-301228c965dd?auto=format&fit=crop&q=80&w=400', price: 'Rp 26.000.000' },
-];
+const RECOMMENDATIONS: Record<string, { base: any[], extended: any[] }> = {
+  Sofa: {
+    base: [
+      { name: 'Velvet Emerald Sofa', image: 'https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=400', price: 'Rp 24.500.000' },
+      { name: 'Leather Tan Classic', image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=400', price: 'Rp 32.000.000' },
+      { name: 'Modern Grey Sectional', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=400', price: 'Rp 45.000.000' },
+      { name: 'Minimalist Ivory Loveseat', image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=400', price: 'Rp 18.200.000' },
+    ],
+    extended: [
+      { name: 'Royal Blue Velvet', image: 'https://images.unsplash.com/photo-1550254478-ead40cd82477?auto=format&fit=crop&q=80&w=400', price: 'Rp 28.900.000' },
+      { name: 'Charcoal Linen Suite', image: 'https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=400', price: 'Rp 21.500.000' },
+      { name: 'Terracotta Modular', image: 'https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=400', price: 'Rp 39.000.000' },
+      { name: 'Arctic White Minimalist', image: 'https://images.unsplash.com/photo-1549497538-301228c965dd?auto=format&fit=crop&q=80&w=400', price: 'Rp 26.000.000' },
+    ]
+  },
+  Kursi: {
+    base: [
+      { name: 'Nordic Oak Armchair', image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=400', price: 'Rp 8.500.000' },
+      { name: 'Velvet Shell Chair', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=400', price: 'Rp 4.200.000' },
+      { name: 'Industrial Iron Stool', image: 'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80&w=400', price: 'Rp 2.800.000' },
+      { name: 'Modern Recliner', image: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=400', price: 'Rp 15.600.000' },
+    ],
+    extended: [
+      { name: 'Vintage Leather Wing', image: 'https://images.unsplash.com/photo-1598191950976-5008771474af?auto=format&fit=crop&q=80&w=400', price: 'Rp 11.200.000' },
+      { name: 'Rattan Garden Chair', image: 'https://images.unsplash.com/photo-1519961655809-34fa156820ff?auto=format&fit=crop&q=80&w=400', price: 'Rp 3.500.000' },
+    ]
+  },
+  Meja: {
+    base: [
+      { name: 'Marble Circular Table', image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=400', price: 'Rp 12.500.000' },
+      { name: 'Solid Walnut Desk', image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&q=80&w=400', price: 'Rp 9.800.000' },
+      { name: 'Glass Coffee Table', image: 'https://images.unsplash.com/photo-1577145789311-6627e79744f9?auto=format&fit=crop&q=80&w=400', price: 'Rp 4.500.000' },
+      { name: 'Rattan Side Table', image: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&q=80&w=400', price: 'Rp 2.200.000' },
+    ],
+    extended: [
+      { name: 'Black Granite Dining', image: 'https://images.unsplash.com/photo-1594541818219-c0707b819782?auto=format&fit=crop&q=80&w=400', price: 'Rp 18.000.000' },
+      { name: 'Minimalist Bedside', image: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&q=80&w=400', price: 'Rp 1.800.000' },
+    ]
+  },
+  Dekorasi: {
+    base: [
+      { name: 'Abstract Ceramic Vase', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=400', price: 'Rp 1.500.000' },
+      { name: 'Brass Mirror Frame', image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=400', price: 'Rp 3.200.000' },
+      { name: 'Hand-woven Rug', image: 'https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?auto=format&fit=crop&q=80&w=400', price: 'Rp 7.800.000' },
+      { name: 'Minimalist Wall Clock', image: 'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&q=80&w=400', price: 'Rp 1.200.000' },
+    ],
+    extended: [
+      { name: 'Golden Table Lamp', image: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=400', price: 'Rp 2.500.000' },
+      { name: 'Geometric Wall Art', image: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=400', price: 'Rp 4.000.000' },
+    ]
+  }
+};
 
 export default function Categories() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const displayedSofas = showAll ? EXTENDED_SOFAS : SOFA_RECOMMENDATIONS;
+  const currentRecs = selectedCategory ? RECOMMENDATIONS[selectedCategory] : null;
+  const displayedItems = currentRecs ? (showAll ? [...currentRecs.base, ...currentRecs.extended] : currentRecs.base) : [];
 
   const closeModal = () => {
     setSelectedCategory(null);
@@ -51,7 +90,7 @@ export default function Categories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              onClick={() => cat.name === 'Sofa' && setSelectedCategory('Sofa')}
+              onClick={() => setSelectedCategory(cat.name)}
               className="group relative h-96 overflow-hidden rounded-sm cursor-pointer shadow-lg"
             >
               <img src={cat.image} alt={cat.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -72,7 +111,7 @@ export default function Categories() {
 
       {/* Recommendation Modal */}
       <AnimatePresence>
-        {selectedCategory === 'Sofa' && (
+        {selectedCategory && (
           <div className="fixed inset-0 z-[200] flex items-center justify-center px-4">
             <motion.div 
               initial={{ opacity: 0 }}
@@ -98,38 +137,38 @@ export default function Categories() {
               <div className="mb-12">
                 <span className="text-gold font-sans text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Rekomendasi Eksklusif</span>
                 <h3 className="font-serif text-3xl font-bold">
-                  {showAll ? 'Seluruh Koleksi Sofa Premium' : 'Pilihan Sofa Terbaik'}
+                  {showAll ? `Seluruh Koleksi ${selectedCategory} Premium` : `Pilihan ${selectedCategory} Terbaik`}
                 </h3>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {displayedSofas.map((sofa, j) => (
+                {displayedItems.map((item, j) => (
                   <motion.div 
-                    key={sofa.name}
+                    key={item.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: (j % 4) * 0.1 }}
                     className="group"
                   >
                     <div className="aspect-[4/5] overflow-hidden rounded-sm bg-beige mb-4 relative">
-                      <img src={sofa.image} alt={sofa.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
                       <button className="absolute bottom-4 right-4 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all">
                         <ShoppingBag className="w-4 h-4 text-charcoal" />
                       </button>
                     </div>
-                    <h4 className="font-sans text-sm font-bold uppercase tracking-widest">{sofa.name}</h4>
-                    <p className="text-gold text-xs mt-1 font-semibold">{sofa.price}</p>
+                    <h4 className="font-sans text-sm font-bold uppercase tracking-widest">{item.name}</h4>
+                    <p className="text-gold text-xs mt-1 font-semibold">{item.price}</p>
                   </motion.div>
                 ))}
               </div>
 
-              {!showAll && (
+              {!showAll && currentRecs && currentRecs.extended.length > 0 && (
                 <div className="mt-12 pt-8 border-t border-stone-100 dark:border-stone-800 text-center">
                   <button 
                     onClick={() => setShowAll(true)}
                     className="group flex items-center gap-4 mx-auto text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal hover:text-gold transition-colors"
                   >
-                    Lihat Semua Koleksi Sofa
+                    Lihat Semua Koleksi {selectedCategory}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </button>
                 </div>
@@ -138,6 +177,7 @@ export default function Categories() {
           </div>
         )}
       </AnimatePresence>
+
     </section>
   );
 }
