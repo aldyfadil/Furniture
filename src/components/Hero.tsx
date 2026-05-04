@@ -45,7 +45,10 @@ export default function Hero() {
               Temukan perpaduan keanggunan abadi dan keahlian modern. Aetheria menghadirkan kemewahan terkurasi ke pusat rumah Anda.
             </p>
             <div className="flex gap-6">
-              <button className="px-8 py-4 bg-charcoal text-white text-[10px] uppercase tracking-widest font-bold hover:bg-gold transition-colors shadow-xl">
+              <button 
+                onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 bg-charcoal text-white text-[10px] uppercase tracking-widest font-bold hover:bg-gold transition-colors shadow-xl"
+              >
                 Jelajahi Koleksi
               </button>
               <button className="px-8 py-4 border border-charcoal/20 text-[10px] uppercase tracking-widest font-bold hover:border-gold hover:text-gold transition-colors">

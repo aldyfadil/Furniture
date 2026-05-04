@@ -53,7 +53,10 @@ export default function App() {
                   Ubah Rumah <br />
                   <span className="text-gold italic font-normal">Anda Hari Ini</span>
                 </h2>
-                <button className="px-12 py-5 bg-charcoal text-white text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-gold transition-all transform hover:scale-105 shadow-xl">
+                <button 
+                  onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-12 py-5 bg-charcoal text-white text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-gold transition-all transform hover:scale-105 shadow-xl"
+                >
                   Belanja Semua Koleksi
                 </button>
              </div>
